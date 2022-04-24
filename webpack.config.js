@@ -59,6 +59,8 @@ module.exports = {
 	],
 	devtool: prod ? false : 'source-map',
 	devServer: {
-		hot: true
+		hot: true,
+		historyApiFallback: true,
+		index: 'index.html'
 	}
 };
