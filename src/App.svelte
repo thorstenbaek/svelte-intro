@@ -18,6 +18,20 @@
 			completed: false
 		}
 	];
+
+	async function sleep(ms) {
+		return new Promise(resolve => setTimeout(resolve, ms));
+	}
+
+	async function LoadUserData() {
+		await sleep(1000);
+
+		var response = await fetch('https://api.github.com/users/thorstenbaek');
+		var json = await response.json();
+		
+		console.log(json);
+		return json;				
+	}
 	
 </script>
 
@@ -41,4 +55,19 @@
 	</div>
 {/each}
 </p>
+
+<h2>Await</h2>
+{#await LoadUserData()}
+	Loading github user...
+{:then user}
+	<div>
+		<img src={user.avatar_url} alt="avatar"/>
+		{user.html_url}
+	</div>
+{:catch error}
+	<div>
+		Error: {error}
+	</div>
+{/await}
+	
 
