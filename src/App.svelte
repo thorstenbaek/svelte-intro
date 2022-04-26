@@ -1,14 +1,15 @@
 <script>
-	var count = 0;
-	var doubled = 0;
+	var array = [1, 2, 3];
+	var sum = 0;
 
-	$:  {
-		doubled = count * 2;
-		console.log("count was changed");
+	$: {
+		sum = array.reduce((acc, cur) => acc + cur, 0);
 	}
 
 	function buttonClicked() {
-		count++;	
+		//array.push(array.length + 1);
+		//array = array;
+		array = [...array, array.length + 1]
 	}
 </script>
 
@@ -17,8 +18,5 @@
 </button>
 
 <div>
-	Button was clicked {count} times	
-</div>
-<div>
-	Count doubled is {doubled}
+	Array contains: {array.join(' + ')} = {sum} 
 </div>
