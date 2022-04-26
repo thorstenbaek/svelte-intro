@@ -1,30 +1,24 @@
 <script>
-	export let name;
+	var count = 0;
+	var doubled = 0;
+
+	$:  {
+		doubled = count * 2;
+		console.log("count was changed");
+	}
+
+	function buttonClicked() {
+		count++;	
+	}
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
+<button on:click={buttonClicked}>
+	Click me!
+</button>
 
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>
+<div>
+	Button was clicked {count} times	
+</div>
+<div>
+	Count doubled is {doubled}
+</div>
