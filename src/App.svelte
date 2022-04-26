@@ -1,30 +1,11 @@
 <script>
-	let patient = {
-		firstName: "Thor",
-		lastName: "Stenbæk"
-	}
+	import {marked} from "marked";
 
-	let fullName = "";
-
-	$: fullName = patient.firstName + " " + patient.lastName
+	let content = "";
 </script>
 
+<textarea bind:value={content}/>
 
-<label>
-	Firstname:
-	<input type="text" bind:value={patient.firstName}/>
-</label>
-<label>
-	Lastname:
-	<input type="text" bind:value={patient.lastName}/>
-</label>
+{@html marked(content)}
 
-<p>
-	Fullname: {fullName}
-</p>
 
-<style>
-	label {
-		display: flex;
-	}
-</style>
