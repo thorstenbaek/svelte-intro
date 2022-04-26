@@ -1,30 +1,21 @@
 <script>
+	import Patient from './Patient.svelte';	
+
 	export let name;
+
+	const patient = {
+		firstName: "Thor",
+		lastName: "Stenbæk",
+		birthDate: "1973.10.15",
+		image: "https://www.w3schools.com/howto/img_avatar.png",
+		description: "<b>Thor</b> is a <i>fictional superhero</i> appearing in American comic books published by Marvel Comics. Created by writer Stan Lee and writer Jack Kirby, the character first appeared in the anthology comic book Amazing Fantasy #15 (August 1962) and then appeared in over sixty more comic books published by Marvel Comics, with twelve new titles. The character is a founding member of the <b>Avengers</b>."
+	};
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<h1>Patient</h1>
+
+	
+	<Patient patient={patient}/>
 </main>
 
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>
