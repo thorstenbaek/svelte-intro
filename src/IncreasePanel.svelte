@@ -1,6 +1,6 @@
 <script>
-    import {global} from "./stores.js";
+    import {hours} from "./stores.js";
 </script>
 
-<button on:click={() => global.update(g => g + 1)}>Increase global</button>
+<button on:click={() => hours.update(g => g + 1)}>Increase hours</button>
     

@@ -1,7 +1,7 @@
 <script>
-    import {global} from "./stores.js";
+    import {hours} from "./stores.js";
 </script>
 
 <h1>
-    {$global}
+    {$hours}
 </h1>
