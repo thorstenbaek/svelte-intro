@@ -7,9 +7,7 @@
 	}
 
 	function buttonClicked() {
-		//array.push(array.length + 1);
-		//array = array;
-		array = [...array, array.length + 1]
+		array.push(array.length + 1);		
 	}
 </script>
 
