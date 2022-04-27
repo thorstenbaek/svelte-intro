@@ -9,10 +9,10 @@
 <img src={formatImage(patient.image)} alt="{patient.lastName}" height="200px" width="200px"/>
 
 <div class="name">
-    {patient.firstName} {patient.lastName}    
+    {patient.name[0].given[0]} {patient.name[0].family}    
 </div>
 <div class="born">
-    {new Date(patient.birthDate).toLocaleDateString()}
+    {new Date(patient.birthDate).toLocaleDateString("nb-NO")}
 </div>
 <div contenteditable="true">
     {@html patient.description}
